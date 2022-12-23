@@ -1,26 +1,34 @@
 package ReciprocalCycles;
 
-import java.math.BigDecimal;
-import java.math.MathContext;
+
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 public class Solution {
     public static void main(String[] args) {
-        MathContext m = new MathContext(1000);
-        BigDecimal one = new BigDecimal("1");
-        int answer = 0;
-        for(int i = 2; i<1000;i++){
-            BigDecimal two = new BigDecimal(Integer.toString(i));
-            String str = one.divide(two, m).toString();
-            System.out.println(str);
-            if(cycleLength(str) > answer) answer = cycleLength(str);
+        int cyclelength;
+        int biggest = 0;
+        int result = 0;
+
+        for(int i = 999; i>10; i--) {
+            cyclelength = length(i);
+            if(cyclelength > biggest) {
+                biggest = cyclelength;
+                result = i;
+            }
         }
+        System.out.println(result);
+    }
+
+    public static int length(int num){
+
+        SortedSet<Integer> set = new TreeSet<>();
+        for(int j = 0, value = 1; j<=num; j++, value*=10){
+            value %= num;
+            set.add(value);
+        }
+        return set.size();
 
     }
-    public static int cycleLength(String str) {
-        String sub = str.substring(2,str.length()-1);
 
-
-
-        return 1;
-    }
 }
