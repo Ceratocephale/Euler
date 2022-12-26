@@ -23,10 +23,11 @@ public class Solution {
     public static int length(int num){
 
         SortedSet<Integer> set = new TreeSet<>();
-        for(int j = 0, value = 1; j<=num; j++, value*=10){
+        for(int j = 0, value = 1; j<num; j++, value*=10){
             value %= num;
             set.add(value);
         }
+        System.out.println(set);
         return set.size();
 
     }
