@@ -7,27 +7,21 @@ public class Solution {
     public static void main(String[] args) {
         int biggest = 0;
         int answer = 0;
+        int result = 0;
         List<Integer> primes = new ArrayList<>();
-        for (int i = 1000; i < 1000000; i++) {
+        for (int i = 2; i < 1000000; i++) {
             if (isPrime(i)) primes.add(i);
         }
 
-        for (Integer i : primes) {
-            List<Integer> subprimes = new ArrayList<>();
-            for (int j = 2; j < i; j++) {
-                if (isPrime(j)) subprimes.add(j);
-            }
-            int result = 0;
-            for (int j = 0; j<subprimes.size(); j++){
-                for(int k = j; result < i && k < subprimes.size()-1; k++){
-                    result += subprimes.get(k);
+        for (int i = 0; i < primes.size() - 2; i++) {
+            for (int j = i, cpt = 0; result < 1000000; j++, cpt++) {
+                result += primes.get(j);
+                if (isPrime(result) && result < 1000000 && cpt >= biggest) {
+                    biggest = cpt + 1;
+                    answer = result;
                 }
-                if(result == i && result > biggest){
-                    biggest = result;
-                    answer = i;
-                }
-                result = 0;
             }
+            result = 0;
         }
         System.out.println(answer);
     }
