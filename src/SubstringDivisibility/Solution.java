@@ -10,8 +10,8 @@ public class Solution {
     public static void main(String[] args) {
         long result = 0;
         permuts("0123456789", "");
-        for (String s : set) {
-            if (substringDivisibility(s)) result += Long.parseLong(s);
+        for(String s: set){
+            if(substringDivisibility(s)) result += Long.parseLong(s);
         }
         System.out.println(result);
 
