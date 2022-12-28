@@ -25,7 +25,7 @@ public class Solution {
         boolean answer = true;
 
         while (num > 0) {
-            tab[(int) num % 10]++;
+            tab[(int) (num % 10)]++;
             num /= 10;
         }
         for (int i : tab) {
