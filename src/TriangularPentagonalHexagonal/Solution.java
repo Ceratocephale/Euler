@@ -4,7 +4,7 @@ public class Solution {
 
     public static void main(String[] args) {
         long number = 0;
-        long result = 0;
+        long result;
         boolean answer = true;
         for (long i = 286; answer; i++) {
             result = (i * (i + 1)) / 2;
