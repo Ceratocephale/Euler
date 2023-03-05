@@ -5,9 +5,8 @@ import java.util.TreeSet;
 public class Main {
     public static void main(String[] args) {
 
-        for (int i = 0, div = 10; i < 3; i++, div *= 10) {
-            System.out.println(3797%div);
-            System.out.println(3797/div);
-        }
+        int i = 585;
+        String str = Integer.toBinaryString(i);
+        System.out.println("" +str.charAt(0)+str.charAt(9) +" "+str.charAt(4) + str.charAt(5));
     }
 }
