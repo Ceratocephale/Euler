@@ -27,7 +27,6 @@ public class Solution {
             value %= num;
             set.add(value);
         }
-        System.out.println(set);
         return set.size();
 
     }
